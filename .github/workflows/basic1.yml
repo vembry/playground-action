@@ -17,5 +17,15 @@ jobs:
         run: echo 'hello there!'
       - name: step 2 
         run: echo 'hello there too!'
+      - name: step 2 math
+        run: |
+          random_number=$((RANDOM % 2))
+
+          # Check if the number is even (modulus 2 equals 0)
+          if [[ $random_number -eq 0 ]]; then
+            echo "ok"
+          else
+            exit 1
+          fi
       - name: step 3 
         run: echo 'hello there tree!'
