@@ -1,10 +1,21 @@
 name: github action test
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: ["master"]
   pull_request:
-    types: [review_requested]
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 jobs:
-  specific_review_requested:
+  bleh:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'A review from octo-team was requested'
+      - name: step 1 
+        run: echo 'hello there!'
+      - name: step 2 
+        run: echo 'hello there too!'
+      - name: step 3 
+        run: echo 'hello there tree!'
