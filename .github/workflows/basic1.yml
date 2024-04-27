@@ -13,11 +13,7 @@ jobs:
   job-ga-1:
     runs-on: ubuntu-latest
     steps:
-      - name: step 1 
-        run: echo 'hello there!'
-      - name: step 2 
-        run: echo 'hello there too!'
-      - name: step 2 math
+      - name: step breaker
         run: |
           # Check if the number is even (modulus 2 equals 0)
           if [ ${{ secrets.BREAKER }} = "true" ]; then
@@ -25,5 +21,9 @@ jobs:
           else
             echo "ok"
           fi
+      - name: step 1 
+        run: echo 'hello there!'
+      - name: step 2 
+        run: echo 'hello there too!'
       - name: step 3 
         run: echo 'hello there tree!'
