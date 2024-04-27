@@ -10,7 +10,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
-  bleh:
+  job-ga-1:
     runs-on: ubuntu-latest
     steps:
       - name: step 1 
