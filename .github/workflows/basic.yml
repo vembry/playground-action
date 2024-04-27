@@ -1,6 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
-name: github action test
+name: github action test 0
+run-name: ${{ github.actor }} is running Github-Actions 🚀
 
 # Controls when the workflow will run
 on:

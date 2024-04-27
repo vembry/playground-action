@@ -1,5 +1,5 @@
 name: github action test 1
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is running Github-Actions 🚀
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
@@ -19,13 +19,11 @@ jobs:
         run: echo 'hello there too!'
       - name: step 2 math
         run: |
-          random_number=$((RANDOM % 2))
-
           # Check if the number is even (modulus 2 equals 0)
-          if [[ $random_number -eq 0 ]]; then
-            echo "ok"
-          else
+          if [ ${{ secrets.BREAKER }} = "true" ]; then
             exit 1
+          else
+            echo "ok"
           fi
       - name: step 3 
         run: echo 'hello there tree!'
